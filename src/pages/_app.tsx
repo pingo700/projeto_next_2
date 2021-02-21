@@ -1,9 +1,14 @@
-import Globalstyle from '../styles/Globalstyle'
+import GlobalStyle from "../styles/Globalstyle";
+import {ToastContainer} from 'react-toastify';
 
 function MyApp({ Component, pageProps }) {
-  <>
-  return <Component {...pageProps} />
-  </>
+  return (
+    <>
+      <GlobalStyle />
+      <Component {...pageProps} />
+      <ToastContainer autoClose={3000} />
+    </>
+  );
 }
 
-export default MyApp
+export default MyApp;

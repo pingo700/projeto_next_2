@@ -1,9 +1,12 @@
-import Head from 'next/head'
+import { useEffect, useState } from "react";
+import { Header, Loading } from "../components";
 
 export default function Home() {
-  return (
-    <div>
-      <h1>HELLO WORLD</h1>
-    </div>
-  )
+  const [isLoading, setIsLoading] = useState(true);
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 500);
+  }, []);
+  return <>{isLoading ? <Loading /> : <Header />}</>;
 }
